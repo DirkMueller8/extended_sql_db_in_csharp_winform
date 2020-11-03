@@ -72,6 +72,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kundendetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,12 @@
     <Compile Include="Mediumdetail.designer.cs">
       <DependentUpon>Mediumdetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="NameSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NameSearch.Designer.cs">
+      <DependentUpon>NameSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reservierung.cs">
@@ -137,6 +149,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Kundendetail.resx">
       <DependentUpon>Kundendetail.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mediumdetail.resx">
       <DependentUpon>Mediumdetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NameSearch.resx">
+      <DependentUpon>NameSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -57,5 +57,11 @@ namespace Buch2020
             Reservierung reserv = new Reservierung();
             reserv.ShowDialog();
         }
+
+        private void btnGoToNameSearch_Click(object sender, EventArgs e)
+        {
+            NameSearch nameSeek = new NameSearch();
+            nameSeek.ShowDialog();
+        }
     }
 }

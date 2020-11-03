@@ -40,6 +40,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.buttonAusleihe = new System.Windows.Forms.Button();
             this.buttonRueckgabe = new System.Windows.Forms.Button();
+            this.btnGoToNameSearch = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -170,11 +171,22 @@
             this.buttonRueckgabe.UseVisualStyleBackColor = true;
             this.buttonRueckgabe.Click += new System.EventHandler(this.buttonRueckgabe_Click);
             // 
+            // btnGoToNameSearch
+            // 
+            this.btnGoToNameSearch.Location = new System.Drawing.Point(64, 132);
+            this.btnGoToNameSearch.Name = "btnGoToNameSearch";
+            this.btnGoToNameSearch.Size = new System.Drawing.Size(123, 23);
+            this.btnGoToNameSearch.TabIndex = 6;
+            this.btnGoToNameSearch.Text = "Open search form";
+            this.btnGoToNameSearch.UseVisualStyleBackColor = true;
+            this.btnGoToNameSearch.Click += new System.EventHandler(this.btnGoToNameSearch_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(433, 321);
+            this.Controls.Add(this.btnGoToNameSearch);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
@@ -203,6 +215,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button buttonAusleihe;
         private System.Windows.Forms.Button buttonRueckgabe;
+        private System.Windows.Forms.Button btnGoToNameSearch;
     }
 }
 
