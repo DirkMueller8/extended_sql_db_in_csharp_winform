@@ -32,13 +32,13 @@ namespace Buch2020 {
         
         private VertragDataTable tableVertrag;
         
-        private global::System.Data.DataRelation relationFK_Medium_Reservierungen;
-        
         private global::System.Data.DataRelation relationFK_Kunde_Reservierungen;
         
-        private global::System.Data.DataRelation relationFK_Medium_Vertrag;
+        private global::System.Data.DataRelation relationFK_Medium_Reservierungen;
         
         private global::System.Data.DataRelation relationFK_Kunde_Vertrag;
+        
+        private global::System.Data.DataRelation relationFK_Medium_Vertrag;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -274,10 +274,10 @@ namespace Buch2020 {
                     this.tableVertrag.InitVars();
                 }
             }
-            this.relationFK_Medium_Reservierungen = this.Relations["FK_Medium_Reservierungen"];
             this.relationFK_Kunde_Reservierungen = this.Relations["FK_Kunde_Reservierungen"];
-            this.relationFK_Medium_Vertrag = this.Relations["FK_Medium_Vertrag"];
+            this.relationFK_Medium_Reservierungen = this.Relations["FK_Medium_Reservierungen"];
             this.relationFK_Kunde_Vertrag = this.Relations["FK_Kunde_Vertrag"];
+            this.relationFK_Medium_Vertrag = this.Relations["FK_Medium_Vertrag"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -297,13 +297,6 @@ namespace Buch2020 {
             this.tableVertrag = new VertragDataTable();
             base.Tables.Add(this.tableVertrag);
             global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_Medium_Reservierungen", new global::System.Data.DataColumn[] {
-                        this.tableMedium.mNummerColumn}, new global::System.Data.DataColumn[] {
-                        this.tableReservierungen.mNummerColumn});
-            this.tableReservierungen.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.Cascade;
-            fkc.UpdateRule = global::System.Data.Rule.None;
             fkc = new global::System.Data.ForeignKeyConstraint("FK_Kunde_Reservierungen", new global::System.Data.DataColumn[] {
                         this.tableKunde.kNummerColumn}, new global::System.Data.DataColumn[] {
                         this.tableReservierungen.kNummerColumn});
@@ -311,10 +304,10 @@ namespace Buch2020 {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.None;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_Medium_Vertrag", new global::System.Data.DataColumn[] {
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Medium_Reservierungen", new global::System.Data.DataColumn[] {
                         this.tableMedium.mNummerColumn}, new global::System.Data.DataColumn[] {
-                        this.tableVertrag.mNummerColumn});
-            this.tableVertrag.Constraints.Add(fkc);
+                        this.tableReservierungen.mNummerColumn});
+            this.tableReservierungen.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.None;
@@ -325,22 +318,29 @@ namespace Buch2020 {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.None;
-            this.relationFK_Medium_Reservierungen = new global::System.Data.DataRelation("FK_Medium_Reservierungen", new global::System.Data.DataColumn[] {
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Medium_Vertrag", new global::System.Data.DataColumn[] {
                         this.tableMedium.mNummerColumn}, new global::System.Data.DataColumn[] {
-                        this.tableReservierungen.mNummerColumn}, false);
-            this.Relations.Add(this.relationFK_Medium_Reservierungen);
+                        this.tableVertrag.mNummerColumn});
+            this.tableVertrag.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.None;
             this.relationFK_Kunde_Reservierungen = new global::System.Data.DataRelation("FK_Kunde_Reservierungen", new global::System.Data.DataColumn[] {
                         this.tableKunde.kNummerColumn}, new global::System.Data.DataColumn[] {
                         this.tableReservierungen.kNummerColumn}, false);
             this.Relations.Add(this.relationFK_Kunde_Reservierungen);
-            this.relationFK_Medium_Vertrag = new global::System.Data.DataRelation("FK_Medium_Vertrag", new global::System.Data.DataColumn[] {
+            this.relationFK_Medium_Reservierungen = new global::System.Data.DataRelation("FK_Medium_Reservierungen", new global::System.Data.DataColumn[] {
                         this.tableMedium.mNummerColumn}, new global::System.Data.DataColumn[] {
-                        this.tableVertrag.mNummerColumn}, false);
-            this.Relations.Add(this.relationFK_Medium_Vertrag);
+                        this.tableReservierungen.mNummerColumn}, false);
+            this.Relations.Add(this.relationFK_Medium_Reservierungen);
             this.relationFK_Kunde_Vertrag = new global::System.Data.DataRelation("FK_Kunde_Vertrag", new global::System.Data.DataColumn[] {
                         this.tableKunde.kNummerColumn}, new global::System.Data.DataColumn[] {
                         this.tableVertrag.kNummerColumn}, false);
             this.Relations.Add(this.relationFK_Kunde_Vertrag);
+            this.relationFK_Medium_Vertrag = new global::System.Data.DataRelation("FK_Medium_Vertrag", new global::System.Data.DataColumn[] {
+                        this.tableMedium.mNummerColumn}, new global::System.Data.DataColumn[] {
+                        this.tableVertrag.mNummerColumn}, false);
+            this.Relations.Add(this.relationFK_Medium_Vertrag);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2143,23 +2143,23 @@ namespace Buch2020 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MediumRow MediumRow {
-                get {
-                    return ((MediumRow)(this.GetParentRow(this.Table.ParentRelations["FK_Medium_Reservierungen"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Medium_Reservierungen"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public KundeRow KundeRow {
                 get {
                     return ((KundeRow)(this.GetParentRow(this.Table.ParentRelations["FK_Kunde_Reservierungen"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Kunde_Reservierungen"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MediumRow MediumRow {
+                get {
+                    return ((MediumRow)(this.GetParentRow(this.Table.ParentRelations["FK_Medium_Reservierungen"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Medium_Reservierungen"]);
                 }
             }
         }
@@ -2235,23 +2235,23 @@ namespace Buch2020 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MediumRow MediumRow {
-                get {
-                    return ((MediumRow)(this.GetParentRow(this.Table.ParentRelations["FK_Medium_Vertrag"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Medium_Vertrag"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public KundeRow KundeRow {
                 get {
                     return ((KundeRow)(this.GetParentRow(this.Table.ParentRelations["FK_Kunde_Vertrag"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Kunde_Vertrag"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MediumRow MediumRow {
+                get {
+                    return ((MediumRow)(this.GetParentRow(this.Table.ParentRelations["FK_Medium_Vertrag"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Medium_Vertrag"]);
                 }
             }
         }
@@ -2587,7 +2587,7 @@ SELECT kNummer, kName, vorname, strasse, postleitzahl, ort, telefon1, telefon2 F
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT kNummer, kName, vorname, strasse, postleitzahl, ort, telefon1, telefon2 FR" +
@@ -2599,6 +2599,12 @@ SELECT kNummer, kName, vorname, strasse, postleitzahl, ort, telefon1, telefon2 F
                 "OM dbo.Kunde WHERE kNummer = @kNummer";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kNummer", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "kNummer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT kNummer, kName, vorname, strasse, postleitzahl, ort, telefon1, telefon2 FR" +
+                "OM dbo.Kunde WHERE kName  = @kName";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kName", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "kName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2637,6 +2643,42 @@ SELECT kNummer, kName, vorname, strasse, postleitzahl, ort, telefon1, telefon2 F
             }
             int returnValue = this.Adapter.Fill(dataTable);
             return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBynameDetail(buch2020DataSet.KundeDataTable dataTable, string kName) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((kName == null)) {
+                throw new global::System.ArgumentNullException("kName");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(kName));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual buch2020DataSet.KundeDataTable GetDataBy1(string kName) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((kName == null)) {
+                throw new global::System.ArgumentNullException("kName");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(kName));
+            }
+            buch2020DataSet.KundeDataTable dataTable = new buch2020DataSet.KundeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -61,6 +61,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="buch2020DataSet.cs">
+      <DependentUpon>buch2020DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="buch2020DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

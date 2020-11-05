@@ -31,5 +31,11 @@ namespace Buch2020
             this.kundeTableAdapter.Fill(this.buch2020DataSet.Kunde);
 
         }
+
+        public void DetailsLaden(string name)
+        {
+            //bitte in einer Zeile eingeben
+            this.kundeTableAdapter.FillBynameDetail(this.buch2020DataSet.Kunde, name);
+        }
     }
 }

@@ -16,5 +16,12 @@ namespace Buch2020
         {
             InitializeComponent();
         }
+
+        private void btnNameSearch_Click(object sender, EventArgs e)
+        {
+            // Create new instance:
+            SearchResult searchnew = new SearchResult();
+            searchnew.ShowDialog();
+        }
     }
 }
