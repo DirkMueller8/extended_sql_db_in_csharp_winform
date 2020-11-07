@@ -22,7 +22,7 @@ namespace Buch2020
         private void Kundendetail_Load(object sender, EventArgs e)
         {
             // TODO: Diese Codezeile lädt Daten in die Tabelle "buch2020DataSet.Kunde". Sie können sie bei Bedarf verschieben oder entfernen.
-            //this.kundeTableAdapter.Fill(this.buch2020DataSet.Kunde);
+            this.kundeTableAdapter.Fill(this.buch2020DataSet.Kunde);
         }
 
         private void buttonSchliessen_Click(object sender, EventArgs e)

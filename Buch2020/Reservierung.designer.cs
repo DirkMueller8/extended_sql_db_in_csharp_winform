@@ -37,14 +37,14 @@
             this.reservierungenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reservierungenTableAdapter = new Buch2020.buch2020DataSetTableAdapters.ReservierungenTableAdapter();
             this.tableAdapterManager = new Buch2020.buch2020DataSetTableAdapters.TableAdapterManager();
+            this.kundeTableAdapter = new Buch2020.buch2020DataSetTableAdapters.KundeTableAdapter();
+            this.mediumTableAdapter = new Buch2020.buch2020DataSetTableAdapters.MediumTableAdapter();
             this.rNummerTextBox = new System.Windows.Forms.TextBox();
             this.gueltigBisDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.mNummerComboBox = new System.Windows.Forms.ComboBox();
+            this.mediumBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kNummerComboBox = new System.Windows.Forms.ComboBox();
             this.kundeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kundeTableAdapter = new Buch2020.buch2020DataSetTableAdapters.KundeTableAdapter();
-            this.mediumBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mediumTableAdapter = new Buch2020.buch2020DataSetTableAdapters.MediumTableAdapter();
             this.buttonDetailKunde = new System.Windows.Forms.Button();
             this.buttonDetailMedium = new System.Windows.Forms.Button();
             this.buttonUebernehmen = new System.Windows.Forms.Button();
@@ -55,9 +55,45 @@
             kNummerLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.buch2020DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservierungenBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kundeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mediumBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kundeBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // rNummerLabel
+            // 
+            rNummerLabel.AutoSize = true;
+            rNummerLabel.Location = new System.Drawing.Point(8, 13);
+            rNummerLabel.Name = "rNummerLabel";
+            rNummerLabel.Size = new System.Drawing.Size(115, 13);
+            rNummerLabel.TabIndex = 1;
+            rNummerLabel.Text = "Reservierungsnummer:";
+            // 
+            // gueltigBisLabel
+            // 
+            gueltigBisLabel.AutoSize = true;
+            gueltigBisLabel.Location = new System.Drawing.Point(8, 40);
+            gueltigBisLabel.Name = "gueltigBisLabel";
+            gueltigBisLabel.Size = new System.Drawing.Size(53, 13);
+            gueltigBisLabel.TabIndex = 3;
+            gueltigBisLabel.Text = "Gültig bis:";
+            // 
+            // mNummerLabel
+            // 
+            mNummerLabel.AutoSize = true;
+            mNummerLabel.Location = new System.Drawing.Point(8, 65);
+            mNummerLabel.Name = "mNummerLabel";
+            mNummerLabel.Size = new System.Drawing.Size(82, 13);
+            mNummerLabel.TabIndex = 5;
+            mNummerLabel.Text = "Mediennummer:";
+            // 
+            // kNummerLabel
+            // 
+            kNummerLabel.AutoSize = true;
+            kNummerLabel.Location = new System.Drawing.Point(8, 92);
+            kNummerLabel.Name = "kNummerLabel";
+            kNummerLabel.Size = new System.Drawing.Size(84, 13);
+            kNummerLabel.TabIndex = 7;
+            kNummerLabel.Text = "Kundennummer:";
             // 
             // buch2020DataSet
             // 
@@ -82,14 +118,13 @@
             this.tableAdapterManager.UpdateOrder = Buch2020.buch2020DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VertragTableAdapter = null;
             // 
-            // rNummerLabel
+            // kundeTableAdapter
             // 
-            rNummerLabel.AutoSize = true;
-            rNummerLabel.Location = new System.Drawing.Point(8, 13);
-            rNummerLabel.Name = "rNummerLabel";
-            rNummerLabel.Size = new System.Drawing.Size(115, 13);
-            rNummerLabel.TabIndex = 1;
-            rNummerLabel.Text = "Reservierungsnummer:";
+            this.kundeTableAdapter.ClearBeforeFill = true;
+            // 
+            // mediumTableAdapter
+            // 
+            this.mediumTableAdapter.ClearBeforeFill = true;
             // 
             // rNummerTextBox
             // 
@@ -100,15 +135,6 @@
             this.rNummerTextBox.Size = new System.Drawing.Size(200, 20);
             this.rNummerTextBox.TabIndex = 2;
             // 
-            // gueltigBisLabel
-            // 
-            gueltigBisLabel.AutoSize = true;
-            gueltigBisLabel.Location = new System.Drawing.Point(8, 40);
-            gueltigBisLabel.Name = "gueltigBisLabel";
-            gueltigBisLabel.Size = new System.Drawing.Size(53, 13);
-            gueltigBisLabel.TabIndex = 3;
-            gueltigBisLabel.Text = "Gültig bis:";
-            // 
             // gueltigBisDateTimePicker
             // 
             this.gueltigBisDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.reservierungenBindingSource, "gueltigBis", true));
@@ -116,15 +142,6 @@
             this.gueltigBisDateTimePicker.Name = "gueltigBisDateTimePicker";
             this.gueltigBisDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.gueltigBisDateTimePicker.TabIndex = 4;
-            // 
-            // mNummerLabel
-            // 
-            mNummerLabel.AutoSize = true;
-            mNummerLabel.Location = new System.Drawing.Point(8, 65);
-            mNummerLabel.Name = "mNummerLabel";
-            mNummerLabel.Size = new System.Drawing.Size(82, 13);
-            mNummerLabel.TabIndex = 5;
-            mNummerLabel.Text = "Mediennummer:";
             // 
             // mNummerComboBox
             // 
@@ -138,14 +155,11 @@
             this.mNummerComboBox.TabIndex = 6;
             this.mNummerComboBox.ValueMember = "mNummer";
             // 
-            // kNummerLabel
+            // mediumBindingSource
             // 
-            kNummerLabel.AutoSize = true;
-            kNummerLabel.Location = new System.Drawing.Point(8, 92);
-            kNummerLabel.Name = "kNummerLabel";
-            kNummerLabel.Size = new System.Drawing.Size(84, 13);
-            kNummerLabel.TabIndex = 7;
-            kNummerLabel.Text = "Kundennummer:";
+            this.mediumBindingSource.DataMember = "Medium";
+            this.mediumBindingSource.DataSource = this.buch2020DataSet;
+            this.mediumBindingSource.Filter = "ausgeliehen = 1";
             // 
             // kNummerComboBox
             // 
@@ -163,20 +177,6 @@
             // 
             this.kundeBindingSource.DataMember = "Kunde";
             this.kundeBindingSource.DataSource = this.buch2020DataSet;
-            // 
-            // kundeTableAdapter
-            // 
-            this.kundeTableAdapter.ClearBeforeFill = true;
-            // 
-            // mediumBindingSource
-            // 
-            this.mediumBindingSource.DataMember = "Medium";
-            this.mediumBindingSource.DataSource = this.buch2020DataSet;
-            this.mediumBindingSource.Filter = "ausgeliehen = 1";
-            // 
-            // mediumTableAdapter
-            // 
-            this.mediumTableAdapter.ClearBeforeFill = true;
             // 
             // buttonDetailKunde
             // 
@@ -241,8 +241,8 @@
             this.Load += new System.EventHandler(this.Reservierung_Load);
             ((System.ComponentModel.ISupportInitialize)(this.buch2020DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservierungenBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kundeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mediumBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kundeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

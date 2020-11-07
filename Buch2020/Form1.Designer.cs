@@ -49,11 +49,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnGoToNameSearch);
             this.groupBox1.Controls.Add(this.buttonEinzelansicht);
             this.groupBox1.Controls.Add(this.buttonListenansicht);
             this.groupBox1.Location = new System.Drawing.Point(9, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.Size = new System.Drawing.Size(200, 128);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kunden";
@@ -173,11 +174,11 @@
             // 
             // btnGoToNameSearch
             // 
-            this.btnGoToNameSearch.Location = new System.Drawing.Point(64, 132);
+            this.btnGoToNameSearch.Location = new System.Drawing.Point(21, 91);
             this.btnGoToNameSearch.Name = "btnGoToNameSearch";
-            this.btnGoToNameSearch.Size = new System.Drawing.Size(123, 23);
+            this.btnGoToNameSearch.Size = new System.Drawing.Size(163, 23);
             this.btnGoToNameSearch.TabIndex = 6;
-            this.btnGoToNameSearch.Text = "Open search form";
+            this.btnGoToNameSearch.Text = "Eintrag nach Namen suchen";
             this.btnGoToNameSearch.UseVisualStyleBackColor = true;
             this.btnGoToNameSearch.Click += new System.EventHandler(this.btnGoToNameSearch_Click);
             // 
@@ -186,7 +187,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(433, 321);
-            this.Controls.Add(this.btnGoToNameSearch);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);

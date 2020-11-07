@@ -19,9 +19,11 @@ namespace Buch2020
 
         private void btnNameSearch_Click(object sender, EventArgs e)
         {
-            // Create new instance:
-            SearchResult searchnew = new SearchResult();
-            searchnew.ShowDialog();
+            // Instanz zum Aufrufen der Form zur Darstellung des Suchenergebnisses:
+            Kundendetail1 newKundeListe = new Kundendetail1();
+            // Den eingegebenen Namen zur Suche an Methode DetailsLaden übergeben:
+            newKundeListe.DetailsLaden(txtNameSearch.Text);
+            newKundeListe.ShowDialog();
         }
     }
 }

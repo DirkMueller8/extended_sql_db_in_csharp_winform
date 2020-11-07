@@ -51,11 +51,11 @@
             // 
             // btnNameSearch
             // 
-            this.btnNameSearch.Location = new System.Drawing.Point(219, 34);
+            this.btnNameSearch.Location = new System.Drawing.Point(208, 32);
             this.btnNameSearch.Name = "btnNameSearch";
             this.btnNameSearch.Size = new System.Drawing.Size(75, 23);
             this.btnNameSearch.TabIndex = 2;
-            this.btnNameSearch.Text = "Search data";
+            this.btnNameSearch.Text = "Suchen";
             this.btnNameSearch.UseVisualStyleBackColor = true;
             this.btnNameSearch.Click += new System.EventHandler(this.btnNameSearch_Click);
             // 
@@ -63,12 +63,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(335, 83);
+            this.ClientSize = new System.Drawing.Size(320, 88);
             this.Controls.Add(this.btnNameSearch);
             this.Controls.Add(this.txtNameSearch);
             this.Controls.Add(this.label1);
             this.Name = "NameSearch";
-            this.Text = "NameSearch";
+            this.Text = "Datenbanksuche nach Name";
             this.ResumeLayout(false);
             this.PerformLayout();
 

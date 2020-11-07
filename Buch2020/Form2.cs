@@ -17,6 +17,12 @@ namespace Buch2020
             InitializeComponent();
         }
 
+        //public void DetailsNameLaden(string kname)
+        //{
+        //    this.kundeTableAdapter.FillBynameDetail(this.buch2020DataSet.Kunde, kname);
+        //    //this.kundeTableAdapter.FillBykundeDetail(this.buch2020DataSet.Kunde, kname);
+        //}
+
         private void kundeBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
